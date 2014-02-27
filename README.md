@@ -1,4 +1,4 @@
 Arduino_PlainIlluminator
 ========================
 
-here, we make illuminator using Arduino.
+Arduinoを用いて, 簡易照度計を作成するサンプルです.
