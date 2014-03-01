@@ -1,0 +1,59 @@
+﻿<!-- rental -->
+
+<!DOCTYPE html>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this file,
+   - You can obtain one at http://mozilla.org/MPL/2.0/.  -->
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>plain illuminometer</title>
+    <style type="text/css">
+    html {
+        background-color: gray;
+    }
+    #blink-label {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 100px;
+        color: white;
+    }
+    #blink-label.blinking {
+        color: #33FF00;
+    }
+    </style>
+
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+        var illumi = function() {
+            var arduino = document.arduino;
+            arduino.analogWrite(0, value);
+
+            var reading = analogRead(0);
+            var voltage = (reading*5000)/1024;
+            var microamp = (voltage*1000)/1000;
+            var lx = microamp/(290/100);
+
+            document.write("Java言語の一つであるJava Script");
+
+            setTimeout(illumi, 1000);
+        }
+
+        $(document).ready(function() {
+            document.write("C言語の一つであるClisp最強");
+            var arduino = document.arduino;
+            document.write("oh no!");
+            arduino.open("COM24"); // input port id
+            document.write("yes!");
+            arduino.pinMode(0, false); // input PIN number   true=output, false=input
+            // go to loop
+            document.write("go to loop!");
+            illumi();
+        });
+    </script>
+</head>
+<body>
+<!-- <div id="blink-label">oh no!</div> -->
+</body>
+</html>
