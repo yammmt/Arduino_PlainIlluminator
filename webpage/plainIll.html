@@ -1,9 +1,6 @@
-<!-- 最終公開前に注意書きを書き改める -->
+<!-- Source code is uploaded to https://github.com/yammmt/Arduino_PlainIlluminator -->
 
 <!DOCTYPE html>
-<!-- This Source Code Form is subject to the terms of the Mozilla Public
-   - License, v. 2.0. If a copy of the MPL was not distributed with this file,
-   - You can obtain one at http://mozilla.org/MPL/2.0/.  -->
 <html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8" />
@@ -11,6 +8,16 @@
     <style type="text/css"> 
     html {
         background-color: black;
+        display: table;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    body {
+        display: table-cell;
+        vertical-align: middle;
+        margin: 0 auto;
+        padding: 0;
     }
     #down-label {
         position: absolute;
@@ -18,8 +25,6 @@
         right: 10px;
         font-size: 25px;
         color: white;
-    }
-    #print_zone {
     }
     #print_lx {
         text-align: center;
@@ -31,16 +36,18 @@
         font-size: 60px;
         color: white;
     }
+
     </style>
 
     <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>
-<div id="down-label"><font color = "lime">Plain Illuminometer</font> <font color = "lightblue"> using arduino.js</font> </div>
-<div id="print_zone">
-    <div id="print_lx">vertical-align: middle; wait a minute...</div>
-    <div id="print_status">please...</div>
-</div>
+
+<div id="down-label"><font color = "lightgreen">Plain Illuminometer</font> <font color = "lightblue"> using </font><font color="bisque">arduino.js</font> </div>
+
+<div id="print_lx">wait a minute...</div>
+<div id="print_status">please...</div>
+
 </body>
 </html>
