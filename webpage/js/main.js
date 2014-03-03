@@ -1,20 +1,18 @@
-var DevicePort = "COM26";
+var DevicePort = "COM4";
 
 var illumi = function() {
-    //alert("loop now");
 
     if(document.getElementById) {
-        //var arduino = document.arduino;
-        //var reading = arduino.analogRead(0);
-        var reading = Math.floor(Math.random()*500);
+        var arduino = document.arduino;
+        var reading = arduino.analogRead(0);
         var voltage = (reading*5000)/1024;
         var microamp = (voltage*1000)/1000;
         var lx = microamp/(290/100);
                 
         document.getElementById("print_lx").innerHTML = lx.toFixed(3) + " [lx]<br>"; 
-        
-        if(lx>1500) {
-            document.getElementById("print_status").innerHTML = "<br>too bright! lol<br>"; 
+
+        if(lx>1100) {
+            document.getElementById("print_status").innerHTML = "<br>too bright to measure. It already reached its limits.<br>"; 
         }
         else if(lx>750) {
             document.getElementById("print_status").innerHTML = "<br>like an office.<br>";
@@ -43,8 +41,7 @@ var illumi = function() {
 $(document).ready(function() {
             
     if(document.arduino) {
-        /*
-        // デバッグの為に一時的にフリーパスに
+        
         var arduino = document.arduino;
         
         try { 
@@ -53,8 +50,8 @@ $(document).ready(function() {
             alert('WRONG devise port!'); 
         };
 
-        arduino.pinMode(0, false); // true=output, false=input
-        */        
+        arduino.pinMode(0, false);
+                
         illumi();
     }
     else {
