@@ -1,4 +1,4 @@
-<!-- Source code is uploaded to https://github.com/yammmt/Arduino_PlainIlluminator -->
+<!-- This source code is uploaded to https://github.com/yammmt/Arduino_PlainIlluminator -->
 
 <!DOCTYPE html>
 <html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
@@ -18,25 +18,27 @@
         vertical-align: middle;
         margin: 0 auto;
         padding: 0;
-    }
-    #down-label {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        font-size: 25px;
         color: white;
+    }
+    #up-label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 40px;
     }
     #print_lx {
         text-align: center;
         font-size: 100px;
-        color: white;
     }
     #print_status {
         text-align: center;
         font-size: 60px;
-        color: white;
     }
-
+    #settings {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+    }
     </style>
 
     <script src="js/jquery-1.7.2.min.js"></script>
@@ -44,10 +46,16 @@
 </head>
 <body>
 
-<div id="down-label"><font color = "lightgreen">Plain Illuminometer</font> <font color = "lightblue"> using </font><font color="bisque">arduino.js</font> </div>
+    <div id="up-label"><b><font color = "lightgreen">Plain Illuminometer</font> <font color = "lightblue"> using </font><font color="bisque">arduino.js</font></b></div>
 
-<div id="print_lx">wait a minute...</div>
-<div id="print_status">please...</div>
+    <div id="print_lx">wait a minute...</div>
+    <div id="print_status">please...</div>
+
+    <form id="settings" action="javascript:void(0)">
+        Device Port:
+        <input type="text" id="devPort">
+        <input type="button" value="Change" onclick="changeDevicePort()">
+    </form> 
 
 </body>
 </html>

@@ -35,27 +35,29 @@ var illumi = function() {
     else {
         alert("your Firefox MUST be updated!");
     }
-}
+};
 
-
-$(document).ready(function() {
-            
+function setup() {
     if(document.arduino) {
-        
         var arduino = document.arduino;
-        
-        try { 
-            arduino.open(DevicePort); 
-        } catch(e) { 
-            alert('WRONG devise port!'); 
-        };
-
-        arduino.pinMode(0, false);
-                
-        illumi();
+        try{
+	        arduino.open(DevicePort);
+            arduino.pinMode(0, false);
+	        illumi();
+        } catch(e) {
+	        alert("Connection failed!");
+        }
     }
     else {
-        alert("arduino.js hasn't been installed!");
+	    alert("NO arduino.js!");
     }
-            
+};
+
+$(function () {
+    setup();
 });
+
+function changeDevicePort(){
+    DevicePort = $('#devPort').val();
+    setup();
+};
