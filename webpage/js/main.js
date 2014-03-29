@@ -41,11 +41,11 @@ function setup() {
     if(document.arduino) {
         var arduino = document.arduino;
         try{
-	        arduino.open(DevicePort);
+            arduino.open(DevicePort);
             arduino.pinMode(0, false);
-	        illumi();
+            illumi();
         } catch(e) {
-	        alert("Connection failed!");
+	    alert("Connection failed!");
         }
     }
     else {
